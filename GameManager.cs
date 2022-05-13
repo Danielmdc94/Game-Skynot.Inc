@@ -11,5 +11,7 @@ public class GameManager : MonoBehaviour
 		if (instance)
 			return (Destroy(gameObject));
 		instance = this;
+
+		players = FindObjectsOfType<Player>();
 	}
 }
