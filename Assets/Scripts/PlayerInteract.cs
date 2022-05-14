@@ -6,12 +6,19 @@ public class PlayerInteract : MonoBehaviour
 	public LayerMask itemMask;
 
 	public SpriteRenderer itemGfx;
-	public Rigidbody2D itemPrefab;
+	public Rigidbody2D itemRB;
 
 	private RobotPart equippedPart;
+	private Rigidbody2D rb;
+
+	// small amount of cooldown time between repeated picking up of objects
+	// to prevent jarring canceling of throws
+	private const float grabCooldownTime = .3f;
+	private float grabCooldown = 0f;
 
 	private void Awake()
 	{
+		rb = GetComponent<Rigidbody2D>();
 		itemGfx.gameObject.SetActive(false);
 	}
 	
@@ -32,9 +39,9 @@ public class PlayerInteract : MonoBehaviour
 				equippedPart = col.GetComponent<RobotPart>();
 			if (equippedPart == null)
 				return ;
-			Debug.Log("pickup object");
+			itemRB = equippedPart.GetComponent<Rigidbody2D>();
 			Sprite img = col.GetComponent<SpriteRenderer>().sprite;
-			Destroy(equippedPart.gameObject);
+			equippedPart.gameObject.SetActive(false);
 			itemGfx.gameObject.SetActive(true);
 			itemGfx.sprite = img;
 		}
@@ -42,8 +49,10 @@ public class PlayerInteract : MonoBehaviour
 		private void Drop()
 		{
 			itemGfx.gameObject.SetActive(false);
-			Rigidbody2D rb = Instantiate<Rigidbody2D>(itemPrefab, transform.position, Quaternion.identity);
-			rb.velocity = Vector2.zero;
+			itemRB.gameObject.SetActive(true);
+			itemRB.position = transform.position;
+			itemRB.rotation = 0;
+			itemRB.velocity = rb.velocity * Vector2.one * 2f;
 			equippedPart = null;
 		}
 
