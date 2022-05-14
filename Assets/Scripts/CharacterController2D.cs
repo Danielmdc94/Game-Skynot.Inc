@@ -10,7 +10,6 @@ public class CharacterController2D : MonoBehaviour
     // Move player in 2D space
     public float maxSpeed = 3.4f;
     public float jumpHeight = 6.5f;
-    public float gravityScale = 1.5f;
 
     bool facingRight = true;
     float moveDirection = 0;
@@ -28,7 +27,6 @@ public class CharacterController2D : MonoBehaviour
 		
         r2d.freezeRotation = true;
         r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-        r2d.gravityScale = gravityScale;
         facingRight = t.localScale.x > 0;
     }
 
