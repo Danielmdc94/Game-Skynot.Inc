@@ -7,6 +7,9 @@ TagManager:
   - RobotTorso
   - RobotLegs
   - RobotHead
+  - GoalTop
+  - GoalMid
+  - GoalBottom
   layers:
   - Default
   - TransparentFX
