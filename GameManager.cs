@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
 	{
 		// Singleton
 		if (instance)
-			return (Destroy(gameObject));
+		{
+			Destroy(gameObject);
+			return ;
+		}
 		instance = this;
 
 		players = FindObjectsOfType<Player>();
