@@ -16,12 +16,12 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void SpawnRobotParts()
     {
-        int randomIndex = Random.Range(0, robotParts.Lenght);
+        int randomIndex = Random.Range(0, robotParts.Length);
         Vector2 spawnPos = new Vector2(0, 0);
         Instantiate(robotParts[randomIndex], spawnPos, robotParts[randomIndex].gameObject.transform.rotation);
     }
