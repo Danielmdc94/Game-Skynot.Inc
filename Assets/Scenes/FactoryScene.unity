@@ -78572,6 +78572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot Part
       objectReference: {fileID: 0}
+    - target: {fileID: 3339325836564854424, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -78625,6 +78629,102 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForce.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForce.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForce.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: jumpTossMinMax.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: jumpTossMinMax.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceX.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceY.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceX.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceY.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceX.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceY.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceX.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceX.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceY.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceY.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceX.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceX.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceY.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceY.m_Curve.Array.data[1].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceX.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceX.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceY.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: tossForceY.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417924, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7277552369951417926, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
       propertyPath: m_RootOrder
       value: 3
