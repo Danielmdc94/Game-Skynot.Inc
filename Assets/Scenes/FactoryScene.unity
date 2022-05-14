@@ -71234,7 +71234,7 @@ SurfaceEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 64
-  m_Speed: 1
+  m_Speed: -1
   m_SpeedVariation: 0
   m_ForceScale: 1
   m_UseContactForce: 1
@@ -71253,7 +71253,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4, y: -4.6}
+  m_Offset: {x: -0.4, y: 2.48}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -79167,7 +79167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6637526302202923595}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.06, y: 1.58, z: 0}
+  m_LocalPosition: {x: -4.1, y: 1.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79229,7 +79229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.46
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -79536,6 +79536,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7277552369951417925, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: m_Color.b
+      value: 0.104396604
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417925, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417925, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3218202
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277552369951417925, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
@@ -79549,7 +79561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7277552369951417926, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.41
+      value: -0.99
       objectReference: {fileID: 0}
     - target: {fileID: 7277552369951417926, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
       propertyPath: m_LocalPosition.z
@@ -80142,7 +80154,7 @@ Tilemap:
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: 4a21ca51f1d794561baa21b7380d9d37, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: 2, z: 0}
@@ -82046,7 +82058,7 @@ Tilemap:
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: 0396766f8d4364c03aa830eeb389224f, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -25, y: 11, z: 0}
@@ -82076,7 +82088,7 @@ Tilemap:
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: 0396766f8d4364c03aa830eeb389224f, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -22, y: 11, z: 0}
