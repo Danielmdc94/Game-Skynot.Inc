@@ -79252,67 +79252,6 @@ Transform:
   m_Father: {fileID: 558727525}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &3339325835747451088
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3339325836564854422, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_Name
-      value: Robot Part
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854424, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339325836564854426, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3b7dc8e53cbc0c751b0fe90cd7262adb, type: 3}
 --- !u!483693784 &4416426772908298182
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -80286,7 +80225,7 @@ Tilemap:
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: 4a21ca51f1d794561baa21b7380d9d37, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -7, y: 2, z: 0}
@@ -80416,7 +80355,7 @@ Tilemap:
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: 4a21ca51f1d794561baa21b7380d9d37, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 6, y: 2, z: 0}
@@ -81378,7 +81317,7 @@ Tilemap:
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: 0396766f8d4364c03aa830eeb389224f, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: 11, z: 0}
@@ -81498,7 +81437,7 @@ Tilemap:
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: 0396766f8d4364c03aa830eeb389224f, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: 11, z: 0}
@@ -81538,7 +81477,7 @@ Tilemap:
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: 0396766f8d4364c03aa830eeb389224f, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 16, y: 11, z: 0}
@@ -82180,7 +82119,7 @@ Tilemap:
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: 0396766f8d4364c03aa830eeb389224f, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -18, y: 11, z: 0}
@@ -82340,7 +82279,7 @@ Tilemap:
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: 0396766f8d4364c03aa830eeb389224f, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -2, y: 11, z: 0}
@@ -82520,7 +82459,7 @@ Tilemap:
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: 0396766f8d4364c03aa830eeb389224f, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 16, y: 11, z: 0}
