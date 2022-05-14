@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RobotPart
+public class RobotPart : MonoBehaviour
 {
 	
 }

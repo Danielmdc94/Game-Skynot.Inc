@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -94,6 +94,18 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -5589,10 +5601,10 @@ TextureImporter:
       factory_transparent_142: 716671721
       factory_transparent_238: 31597453
       factory_transparent_92: -1071529137
-      factory_transparent_27: 1961919635
-      factory_transparent_250: 1488946938
       factory_transparent_130: -506236133
+      factory_transparent_27: 1961919635
       factory_transparent_124: 144621362
+      factory_transparent_250: 1488946938
       factory_transparent_84: 354709600
       factory_transparent_69: 1675039670
       factory_transparent_131: 1061201696
@@ -5615,9 +5627,9 @@ TextureImporter:
       factory_transparent_120: 1391161493
       factory_transparent_25: 1008934895
       factory_transparent_12: -101259505
-      factory_transparent_127: 244319779
-      factory_transparent_64: 833341749
       factory_transparent_188: 262053513
+      factory_transparent_64: 833341749
+      factory_transparent_127: 244319779
       factory_transparent_112: -702247469
       factory_transparent_146: -1732017301
       factory_transparent_49: -1195619353
