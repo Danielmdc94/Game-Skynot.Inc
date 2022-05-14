@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class RobotPart : MonoBehaviour
 {
+	private float rightDestroy = 18;
+	private float leftDestroy = -27;
 	public enum RobotPartType
 	{
 		Head, Torso, Arm
@@ -20,4 +22,16 @@ public class RobotPart : MonoBehaviour
 	{
 		
 	}
+
+	void Update()
+    {
+        if (transform.position.x < leftDestroy)
+        {
+            Destroy(gameObject);
+        }
+		if (transform.position.x > rightDestroy)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

@@ -30,15 +30,59 @@ public class CharacterController2D : MonoBehaviour
         t = transform;
         r2d = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<CapsuleCollider2D>();
+<<<<<<< HEAD
 		rend = GetComponent<SpriteRenderer>();
 		player = GetComponent<Player>();
 		
 		colliderRadius = mainCollider.size.x * 0.4f * Mathf.Abs(transform.localScale.x);
+=======
+
+        r2d.freezeRotation = true;
+        r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        facingRight = t.localScale.x > 0;
+>>>>>>> 134a34513add06aa9cd1a1a6f171b67dd0a94cba
     }
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
+=======
+        // Movement controls
+
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
+        {
+            moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
+        }
+        else
+        {
+            if (isGrounded || r2d.velocity.magnitude < 0.01f)
+            {
+                moveDirection = 0;
+            }
+        }
+
+        // Change facing direction
+        if (moveDirection != 0)
+        {
+            if (moveDirection > 0 && !facingRight)
+            {
+                facingRight = true;
+                t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+            }
+            if (moveDirection < 0 && facingRight)
+            {
+                facingRight = false;
+                t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+            }
+        }
+
+        // Jumping
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        {
+            r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+        }
+>>>>>>> 134a34513add06aa9cd1a1a6f171b67dd0a94cba
     }
 
     void FixedUpdate()
