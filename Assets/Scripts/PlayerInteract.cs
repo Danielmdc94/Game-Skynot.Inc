@@ -6,7 +6,8 @@ public class PlayerInteract : MonoBehaviour
 	public LayerMask itemMask;
 	public Vector2 tossForce;
 	public Vector2 jumpTossMinMax;
-	
+	public Vector2 dropOffset;
+
 	public SpriteRenderer itemGfx;
 
 	private RobotPart equippedPart;
@@ -60,7 +61,7 @@ public class PlayerInteract : MonoBehaviour
 		{
 			itemGfx.gameObject.SetActive(false);
 			itemRB.gameObject.SetActive(true);
-			itemRB.position = transform.position;
+			itemRB.position = transform.position + (Vector3)dropOffset;
 			itemRB.rotation = 0;
 
 			float vy = 0f;
