@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
-	public Player[] players;
+	public static Player[] players;
 
 	private void Awake()
 	{
