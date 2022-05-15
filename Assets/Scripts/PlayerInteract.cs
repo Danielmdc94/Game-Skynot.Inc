@@ -32,29 +32,33 @@ public class PlayerInteract : MonoBehaviour
 	private void Update()
 	{
 		grabCooldown -= Time.deltaTime;
-		if (Input.GetKeyDown(KeyCode.E))
+		if (player.queInteract)
 		{
 			if (equippedPart == null)
-				PickUp();
-			else Drop();
+				player.queInteract = !PickUp();
+			else {
+				Drop();
+				player.queInteract = false;
+			}
 		}
 	}
 
-		private void PickUp()
+		private bool PickUp()
 		{
 			if (grabCooldown > 0f)
-				return ;
+				return false;
 			grabCooldown = grabCooldownTime;
 			Collider2D col = Physics2D.OverlapCircle(transform.position, radius, itemMask);
 			if (col)
 				equippedPart = col.GetComponent<RobotPart>();
 			if (equippedPart == null)
-				return ;
+				return false;
 			itemRB = equippedPart.GetComponent<Rigidbody2D>();
 			Sprite img = col.GetComponent<SpriteRenderer>().sprite;
 			equippedPart.gameObject.SetActive(false);
 			itemGfx.gameObject.SetActive(true);
 			itemGfx.sprite = img;
+			return true;
 		}
 
 		private void Drop()

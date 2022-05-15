@@ -24,6 +24,9 @@ public class CharacterController2D : MonoBehaviour
 	private  float colliderRadius;
     private bool isGrounded = false;
 
+	private float accelRatio = 0f;
+	private float accelDampV;
+
     // Use this for initialization
     private void Awake()
     {
@@ -47,7 +50,8 @@ public class CharacterController2D : MonoBehaviour
 		isGrounded = CheckGround();
 		
         // Calculate movement velocity
-		velocity.x = player.moveDir.x * maxSpeed;
+		accelRatio = Mathf.SmoothDamp(accelRatio, Mathf.Abs(player.moveDir.x),  ref accelDampV, accelTime);
+		velocity.x = player.moveDir.x * maxSpeed * acceleration.Evaluate(accelRatio);
 
 		// Jumping
 		if (player.queJump && isGrounded)
