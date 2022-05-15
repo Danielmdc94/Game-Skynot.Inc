@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 	private const float jumpBufferTime = .2f;
 	private float jumpBuffer = 0f;
 
-	private const float actionBufferTime = .05f;
+	private const float actionBufferTime = .5f;
 	private float actionBuffer;
 
 	private void Awake()
