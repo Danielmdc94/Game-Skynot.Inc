@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDir: {x: 0, y: 0}
   queJump: 0
+  queInteract: 0
 --- !u!114 &7277552369951417978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +143,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  accelTime: 1
+  accelTime: 0.3
   groundMask:
     serializedVersion: 2
     m_Bits: 55
