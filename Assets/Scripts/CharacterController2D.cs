@@ -38,6 +38,7 @@ public class CharacterController2D : MonoBehaviour
         mainCollider = GetComponent<CapsuleCollider2D>();
 		rend = GetComponent<SpriteRenderer>();
 		player = GetComponent<Player>();
+		speaker = GetComponent<AudioSource>();
 		
 		colliderRadius = mainCollider.size.x * 0.4f * Mathf.Abs(transform.localScale.x);
     }
