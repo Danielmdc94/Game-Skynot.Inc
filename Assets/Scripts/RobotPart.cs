@@ -5,13 +5,14 @@ using UnityEngine;
 public class RobotPart : MonoBehaviour
 {
 	private GameManager gameManager;
-	private float rightDestroy = 18;
-	private float leftDestroy = -27;
+
+	private const float rightDestroy = 18;
+	private const float leftDestroy = -27;
+	
 	public static int topCount = 0;
 	public static int midCount = 0;
 	public static int bottomCount = 0;
 	public enum RobotPartType
-	
 	{
 		Head, Torso, Arm
 	};
@@ -22,8 +23,9 @@ public class RobotPart : MonoBehaviour
 
 	void Start()
 	{
-		gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-	}
+		gameManager = GameManager.instance;
+ 	}
+	
 	private void OnEnable()
 	{
 		Initialize();
@@ -47,7 +49,8 @@ public class RobotPart : MonoBehaviour
             Destroy(gameObject);
         }
     }
-	private void OnTriggerEnter(Collider other)
+	
+	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.CompareTag("GoalTop"))
 		{
