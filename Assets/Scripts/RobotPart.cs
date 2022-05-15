@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class RobotPart : MonoBehaviour
 {
+	private GameManager gameManager;
 	private float rightDestroy = 18;
 	private float leftDestroy = -27;
 	public enum RobotPartType
+	
 	{
 		Head, Torso, Arm
 	};
@@ -13,6 +15,10 @@ public class RobotPart : MonoBehaviour
 	public RobotPartType partType;
 	private int colorIndex;
 
+	void Start()
+	{
+		gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+	}
 	private void OnEnable()
 	{
 		Initialize();
@@ -27,10 +33,12 @@ public class RobotPart : MonoBehaviour
     {
         if (transform.position.x < leftDestroy)
         {
+			gameManager.UpdateScore(1);
             Destroy(gameObject);
         }
 		if (transform.position.x > rightDestroy)
         {
+			gameManager.UpdateScore(1);
             Destroy(gameObject);
         }
     }
