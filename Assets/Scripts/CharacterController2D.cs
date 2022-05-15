@@ -14,12 +14,15 @@ public class CharacterController2D : MonoBehaviour
 	[Space]
 	public LayerMask groundMask;
     public float jumpHeight = 6.5f;
+	[Space]
+	public AudioClip sfx_jump;
 
 	Player player;
 	Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
     Transform t;
 	SpriteRenderer rend;
+	AudioSource speaker;
 
 	private  float colliderRadius;
     private bool isGrounded = false;
@@ -55,7 +58,10 @@ public class CharacterController2D : MonoBehaviour
 
 		// Jumping
 		if (player.queJump && isGrounded)
+		{
 			velocity.y = Mathf.Sqrt(-2f * jumpHeight * Physics2D.gravity.y * r2d.gravityScale);
+			speaker.PlayOneShot(sfx_jump);
+		}
 
 		// Apply forces
 		r2d.velocity = velocity;
