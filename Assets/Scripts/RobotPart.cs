@@ -38,12 +38,12 @@ public class RobotPart : MonoBehaviour
     {
         if (transform.position.x < leftDestroy)
         {
-			//gameManager.UpdateScore(1);
+			gameManager.UpdateScore(1);
             Destroy(gameObject);
         }
 		if (transform.position.x > rightDestroy)
         {
-			//gameManager.UpdateScore(1);
+			gameManager.UpdateScore(1);
             Destroy(gameObject);
         }
     }

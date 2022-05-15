@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 	public Button startButton;
 	public bool isGameActive;
 	private int score;
+	public static int topCount = 0;
+	public static int midCount = 0;
+	public static int bottomCount = 0;
 
 	void Start()
 	{
