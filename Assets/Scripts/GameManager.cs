@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 	public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        scoreText.text = score +" termiNOTors built";
+        scoreText.text = score +" TermiNOTors built";
     }
 	public void hideBGBlack()
 	{
