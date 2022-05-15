@@ -148,6 +148,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   jumpHeight: 3
+  sfx_jump: {fileID: 8300000, guid: 45a4522dd3ca74849a5581e49950184a, type: 3}
 --- !u!114 &7277552369951417920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,11 +216,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6af163ed7686347fc9a4b7010bd2a0df, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

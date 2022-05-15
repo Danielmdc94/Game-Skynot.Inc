@@ -16803,7 +16803,7 @@ Camera:
   far clip plane: 400
   field of view: 60
   orthographic: 1
-  orthographic size: 10.5
+  orthographic size: 11.39749
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -88532,6 +88532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1314333592}
   - component: {fileID: 1314333593}
+  - component: {fileID: 1314333594}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -88570,6 +88571,102 @@ MonoBehaviour:
   bgBlack: {fileID: 0}
   startButton: {fileID: 0}
   isGameActive: 0
+--- !u!82 &1314333594
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314333591}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6af163ed7686347fc9a4b7010bd2a0df, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1419441799
 GameObject:
   m_ObjectHideFlags: 0
@@ -96628,6 +96725,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2254862573256243757, guid: 5378843f0c17944adb370c0a2cdc811f, type: 3}
+      propertyPath: m_Volume
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 8914293558546370645, guid: 5378843f0c17944adb370c0a2cdc811f, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -96985,6 +97086,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 968281149, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
+      propertyPath: m_Volume
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7277552369951417920, guid: 722de29893993d87d93eaa9ee7518c56, type: 3}
       propertyPath: radius
       value: 0.75
@@ -97650,7 +97755,7 @@ Tilemap:
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: 4a21ca51f1d794561baa21b7380d9d37, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: 2, z: 0}
@@ -98712,7 +98817,7 @@ Tilemap:
       - {fileID: 21300000, guid: bc9de7cb512174453ab2209a14ac8cf0, type: 3}
       - {fileID: 21300000, guid: ec06e3a83969047bb85dae488c5f7ef3, type: 3}
       - {fileID: 21300000, guid: 0396766f8d4364c03aa830eeb389224f, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -2, y: 11, z: 0}
