@@ -10,10 +10,26 @@ public class GameManager : MonoBehaviour
 	public static GameManager instance;
 	public static Player[] players;
 	public TextMeshProUGUI scoreText;
+	public GameObject bgBlack;
 	public Button startButton;
 	public bool isGameActive;
 	private int score;
 
+	void Start()
+	{
+
+	}
+
+	void Update()
+	{
+		if (isGameActive == false && (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("TitleScreen")))
+		{
+			if (Input.GetKeyUp("space"))
+			{
+				hideBGBlack();
+			}
+		}
+	}
 	private void Awake()
 	{
 		// Singleton
@@ -28,11 +44,16 @@ public class GameManager : MonoBehaviour
 	}
 	public void StartGame()
 	{
-		isGameActive = true;
+		SceneManager.LoadScene("FactoryScene");
 	}
 	public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        scoreText.text = score +" TermiNOTors built";
+        scoreText.text = score +" termiNOTors built";
     }
+	public void hideBGBlack()
+	{
+		bgBlack.gameObject.SetActive(false);
+		isGameActive = true;
+	}
 }
