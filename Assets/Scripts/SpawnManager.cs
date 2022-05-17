@@ -1,30 +1,79 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] robotParts;
+    public RobotPart prefab;
     public Vector2[] spawnPos;
-    private float startDelay = 1.0f;
-    private float spawnTime = 3f;
+
+	// Controls the difficulty over time, factoring how much time has passed
+	public float spawnTimeScale = 10f;
+	public AnimationCurve spawnIntervalDerivation;
+
+	private bool gameRunning = false;
+	private const float maxDifficultyTime = 180f;
+	private float gameTime = 0f;
+
+	private const float startDelay = 3f;
+    private float spawnTime;
+
+	public const uint maxPoolSize = 150;
+	private static Queue<RobotPart> goPool = new Queue<RobotPart>();
+	private static uint poolCount = 0;
+	
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRobotParts", startDelay, spawnTime);
+        Invoke("Begin", startDelay);
     }
 
+	private void Begin()
+	{
+		gameRunning = true;
+		gameTime = 0f;
+		spawnTime = 0f;
+	}
+	
     // Update is called once per frame
     void Update()
     {
-
+		if (!gameRunning)
+			return ;
+		gameTime += Time.deltaTime;
+		spawnTime -= Time.deltaTime;
+		if (spawnTime <= 0f)
+			SpawnRobotPart();
     }
-
-    void SpawnRobotParts()
+	
+    void SpawnRobotPart()
     {
-        int randomIndex = Random.Range(0, robotParts.Length);
-        int randomPos = Random.Range(0, 3);
-        Instantiate(robotParts[randomIndex], spawnPos[randomPos], robotParts[randomIndex].gameObject.transform.rotation);
+		spawnTime = spawnIntervalDerivation.Evaluate(gameTime / maxDifficultyTime) * spawnTimeScale;
+
+		Vector2 pos = spawnPos[Random.Range(0, spawnPos.Length)];
+		RobotPart go = goPool.Count == 0 ? null : goPool.Dequeue();
+		if (go == null)
+		{
+			if (poolCount >= maxPoolSize)
+				return ;
+			poolCount++;
+			go = Instantiate<RobotPart>(prefab, pos, Quaternion.identity, transform);
+		}
+		go.gameObject.SetActive(true);
+		go.transform.position = pos;
+		go.Initialize();
     }
 
+	public static void RecallToPool(RobotPart target)
+	{
+		target.gameObject.SetActive(false);
+		goPool.Enqueue(target);
+	}
+
+	// Debug visualization
+	private void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.green;
+		foreach (Vector2 pos in spawnPos)
+			Gizmos.DrawWireSphere(pos, .5f);
+	}
 }

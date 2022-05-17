@@ -1,129 +1,65 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RobotPart : MonoBehaviour
 {
-	private GameManager gameManager;
+	private static GameManager gm;
 
-	private const float rightDestroy = 18;
-	private const float leftDestroy = -27;
-	
-	public static int topCount = 0;
-	public static int midCount = 0;
-	public static int bottomCount = 0;
+	private SpriteRenderer rend;
+
 	public enum RobotPartType
 	{
-		Head, Torso, Arm
+		Head, Torso, Legs
+	};
+
+	public static RobotPartType[] rpTypes = {
+		RobotPartType.Head,
+		RobotPartType.Torso,
+		RobotPartType.Legs
+	};
+	
+	public static Color[] colors = {
+		Color.red,
+		Color.white,
+		Color.blue,
+		Color.green
 	};
 
 	[HideInInspector]
-	public RobotPartType partType;
+	public RobotPartType partType = RobotPartType.Head;
 	private int colorIndex;
 
-	void Start()
+	void Awake()
 	{
-		gameManager = GameManager.instance;
- 	}
-	
-	private void OnEnable()
-	{
-		Initialize();
+		if (gm == null)
+			gm = GameManager.instance;
+		rend = GetComponent<SpriteRenderer>();
 	}
 	
 	public void Initialize()
 	{
-		
+		partType = RandomType();
+		rend.sprite = gm.GetImage(partType);
+		// set color index and color
 	}
 
-	void Update()
+	void FixedUpdate()
     {
-        if (transform.position.x < leftDestroy)
-        {
-			gameManager.UpdateScore(1);
-            Destroy(gameObject);
-        }
-		if (transform.position.x > rightDestroy)
-        {
-			gameManager.UpdateScore(1);
-            Destroy(gameObject);
-        }
+		if (!gm.gameArea.Contains(transform.position))
+			SpawnManager.RecallToPool(this);
     }
 	
 	private void OnTriggerEnter2D(Collider2D  other)
 	{
-		if (other.gameObject.CompareTag("GoalTop"))
-		{
-			if (topCount == 0 && CompareTag("RobotHead"))
-			{
-				topCount++;
-			}
-			else if (topCount == 1 && CompareTag("RobotTorso"))
-			{
-				topCount++;
-			}
-			else if (topCount == 2 && CompareTag("RobotLegs"))
-			{
-				topCount++;
-			}
-			else if (topCount == 3)
-			{
-				gameManager.UpdateScore(1);
-				topCount = 0;
-			}
-			else 
-			{
-				topCount = 0;
-			}
-			
-		}
-		if (other.gameObject.CompareTag("GoalMid"))
-		{
-			if (midCount == 0 && CompareTag("RobotHead"))
-			{
-				topCount++;
-			}
-			else if (midCount == 1 && CompareTag("RobotTorso"))
-			{
-				topCount++;
-			}
-			else if (midCount == 2 && CompareTag("RobotLegs"))
-			{
-				midCount++;
-			}
-			else if (midCount == 3)
-			{
-				gameManager.UpdateScore(1);
-				midCount = 0;
-			}
-			else 
-			{
-				midCount = 0;
-			}
-		}
-		if (other.gameObject.CompareTag("GoalBottom"))
-		{
-			if (bottomCount == 0 && CompareTag("RobotLegs"))
-			{
-				bottomCount++;
-			}
-			else if (bottomCount == 1 && CompareTag("RobotTorso"))
-			{
-				topCount++;
-			}
-			else if (bottomCount == 2 && CompareTag("RobotHead"))
-			{
-				bottomCount++;
-			}
-			else if (topCount == 3)
-			{
-				gameManager.UpdateScore(1);
-				bottomCount = 0;
-			}
-			else 
-			{
-				bottomCount = 0;
-			}
-		}
+		RobotDeposit deposit = other.GetComponent<RobotDeposit>();
+		if (deposit == null)
+			return ;
+		deposit.Evaluate(this);
+	}
+
+	public static RobotPartType RandomType()
+	{
+		int index = Random.Range(0, rpTypes.Length);
+		return (rpTypes[index]);
 	}
 }
