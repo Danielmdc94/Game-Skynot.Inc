@@ -29,7 +29,7 @@ public class CharacterController2D : MonoBehaviour
 
 	private float accelRatio = 0f;
 	private float accelDampV;
-
+	
     // Use this for initialization
     private void Awake()
     {
@@ -41,11 +41,6 @@ public class CharacterController2D : MonoBehaviour
 		speaker = GetComponent<AudioSource>();
 		
 		colliderRadius = mainCollider.size.x * 0.4f * Mathf.Abs(transform.localScale.x);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     void FixedUpdate()

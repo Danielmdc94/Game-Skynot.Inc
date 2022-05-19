@@ -20,6 +20,9 @@ public class SpawnManager : MonoBehaviour
 	public const uint maxPoolSize = 150;
 	private static Queue<RobotPart> goPool = new Queue<RobotPart>();
 	private static uint poolCount = 0;
+
+	public float poissonRadius;
+	public LayerMask poissonMask;
 	
     // Start is called before the first frame update
     void Start()
@@ -50,6 +53,8 @@ public class SpawnManager : MonoBehaviour
 		spawnTime = spawnIntervalDerivation.Evaluate(gameTime / maxDifficultyTime) * spawnTimeScale;
 
 		Vector2 pos = spawnPos[Random.Range(0, spawnPos.Length)];
+		if (Physics2D.OverlapCircle(pos, poissonRadius, poissonMask) != null)
+			return ;
 		RobotPart go = goPool.Count == 0 ? null : goPool.Dequeue();
 		if (go == null)
 		{
@@ -74,6 +79,6 @@ public class SpawnManager : MonoBehaviour
 	{
 		Gizmos.color = Color.green;
 		foreach (Vector2 pos in spawnPos)
-			Gizmos.DrawWireSphere(pos, .5f);
+			Gizmos.DrawWireSphere(pos, poissonRadius);
 	}
 }

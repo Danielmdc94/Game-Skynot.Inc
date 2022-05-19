@@ -14,21 +14,20 @@ public class RobotDeposit : MonoBehaviour
 	public float blastForce;
 	public Vector2 blastDirection;
 	
-	private static Vector3 arrowOffset;
+	private Vector3 arrowOffset;
 	private Image[] asmGFX;
 	
-	[HideInInspector]
-	public Stack<RobotPart.RobotPartType> assembly = new Stack<RobotPart.RobotPartType>();
+	private Stack<RobotPart.RobotPartType> assembly = new Stack<RobotPart.RobotPartType>();
+	private Stack<int> colorIndices = new Stack<int>();
 
 	private void Start()
 	{
 		gm = GameManager.instance;
 		asmGFX = asmGFXparent.GetComponentsInChildren<Image>();
 		arrowOffset = arrowGFX.transform.localPosition;
-		Debug.Log(arrowOffset);
 		
 		Initialize();
-		GUI_Refresh(assembly);
+		GUI_Refresh(assembly, colorIndices);
 	}
 
 	private void Update()
@@ -40,11 +39,14 @@ public class RobotDeposit : MonoBehaviour
 	{
 		Blast();
 		assembly.Clear();
+		colorIndices.Clear();
+		int ci = 0;
 		int count = Random.Range(1, asmGFX.Length + 1);
 		while (count-- > 0)
 		{
-			RobotPart.RobotPartType rptype = RobotPart.RandomType();
-			assembly.Push(rptype);
+			assembly.Push(RobotPart.RandomType());
+			RobotPart.RandomColor(ref ci);
+			colorIndices.Push(ci);
 		}
 	}
 	
@@ -52,7 +54,7 @@ public class RobotDeposit : MonoBehaviour
 	{
 		RobotPart.RobotPartType expectedPart = assembly.Pop();
 		SpawnManager.RecallToPool(part);
-		if (part.partType == expectedPart)
+		if (part.partType == expectedPart && part.colorIndex == colorIndices.Pop())
 		{
 			if (assembly.Count == 0)
 			{
@@ -65,7 +67,7 @@ public class RobotDeposit : MonoBehaviour
 			gm.UpdateLives(-1);
 			Initialize();
 		}
-		GUI_Refresh(assembly);
+		GUI_Refresh(assembly, colorIndices);
 	}
 
 	private void Blast()
@@ -80,17 +82,22 @@ public class RobotDeposit : MonoBehaviour
 		}
 	}
 
-	private void GUI_Refresh(Stack<RobotPart.RobotPartType> input)
+	private void GUI_Refresh(Stack<RobotPart.RobotPartType> input, Stack<int> colors)
 	{
 		Stack<RobotPart.RobotPartType> stack = new Stack<RobotPart.RobotPartType>(input);
+		Stack<int> cols = new Stack<int>(colors);
 		int i = 0;
 		while (stack.Count > 0)
 			asmGFX[i++].sprite = gm.GetImage(stack.Pop());
+
 		int index = Mathf.Max(0, i - 1);
 		arrowGFX.transform.SetParent(asmGFX[index].transform);
 		arrowGFX.transform.localPosition = arrowOffset;
+
 		while (i < asmGFX.Length)
 			asmGFX[i++].sprite = gm.GetImage(null);
+		foreach (Image img in asmGFX)
+			img.color = ( cols.Count > 0 ) ? RobotPart.GetColor(cols.Pop()) : Color.white;
 	}
 
 	private void OnDrawGizmosSelected()

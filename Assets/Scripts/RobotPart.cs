@@ -11,23 +11,21 @@ public class RobotPart : MonoBehaviour
 	{
 		Head, Torso, Legs
 	};
-
-	public static RobotPartType[] rpTypes = {
+	private static Color[] colors = {
+		Color.white,
+		Color.red,
+		Color.magenta,
+		Color.cyan,
+		Color.green,
+	};
+	private static RobotPartType[] rpTypes = {
 		RobotPartType.Head,
 		RobotPartType.Torso,
 		RobotPartType.Legs
 	};
 	
-	public static Color[] colors = {
-		Color.red,
-		Color.white,
-		Color.blue,
-		Color.green
-	};
-
-	[HideInInspector]
-	public RobotPartType partType = RobotPartType.Head;
-	private int colorIndex;
+	[HideInInspector] public RobotPartType partType = RobotPartType.Head;
+	[HideInInspector] public int colorIndex;
 
 	void Awake()
 	{
@@ -40,7 +38,7 @@ public class RobotPart : MonoBehaviour
 	{
 		partType = RandomType();
 		rend.sprite = gm.GetImage(partType);
-		// set color index and color
+		rend.color = RandomColor(ref colorIndex);
 	}
 
 	void FixedUpdate()
@@ -57,6 +55,16 @@ public class RobotPart : MonoBehaviour
 		deposit.Evaluate(this);
 	}
 
+	public static Color RandomColor(ref int index)
+	{
+		index = Random.Range(0, colors.Length);
+		return (colors[index]);
+	}
+	public static Color GetColor(int index)
+	{
+		return (colors[index]);
+	}
+	
 	public static RobotPartType RandomType()
 	{
 		int index = Random.Range(0, rpTypes.Length);

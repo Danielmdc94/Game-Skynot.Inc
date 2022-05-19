@@ -54,10 +54,11 @@ public class PlayerInteract : MonoBehaviour
 			if (equippedPart == null)
 				return false;
 			itemRB = equippedPart.GetComponent<Rigidbody2D>();
-			Sprite img = col.GetComponent<SpriteRenderer>().sprite;
+			SpriteRenderer rend = col.GetComponent<SpriteRenderer>();
 			equippedPart.gameObject.SetActive(false);
 			itemGfx.gameObject.SetActive(true);
-			itemGfx.sprite = img;
+			itemGfx.sprite = rend.sprite;
+			itemGfx.color = rend.color;
 			return true;
 		}
 
