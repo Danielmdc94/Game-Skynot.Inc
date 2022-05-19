@@ -21,6 +21,16 @@ public class GameManager : MonoBehaviour
 	public Sprite imgRobotLegs;
 	public Sprite imgEmpty;
 
+	//	public Color[] robotColorsPublic;
+	public static Color[] robotColors = {
+		Color.white,
+		Color.magenta,
+		Color.green,
+		Color.blue,
+		Color.red,
+		Color.yellow
+	};
+	
 	private int score = 0;
 	private int lives = 4;
 	
@@ -90,7 +100,15 @@ public class GameManager : MonoBehaviour
 			default : return (imgEmpty);
 		}
 	}
-
+	public static int RndColorIndex()
+	{
+		return (Random.Range(0, robotColors.Length));
+	}
+	public static Color GetColor(int index)
+	{
+		return (robotColors[index]);
+	}
+	
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.red;

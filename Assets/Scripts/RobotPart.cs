@@ -11,13 +11,7 @@ public class RobotPart : MonoBehaviour
 	{
 		Head, Torso, Legs
 	};
-	private static Color[] colors = {
-		Color.white,
-		Color.red,
-		Color.magenta,
-		Color.cyan,
-		Color.green,
-	};
+
 	private static RobotPartType[] rpTypes = {
 		RobotPartType.Head,
 		RobotPartType.Torso,
@@ -27,10 +21,9 @@ public class RobotPart : MonoBehaviour
 	[HideInInspector] public RobotPartType partType = RobotPartType.Head;
 	[HideInInspector] public int colorIndex;
 
-	void Awake()
+	public void Awaken()
 	{
-		if (gm == null)
-			gm = GameManager.instance;
+		gm = GameManager.instance;
 		rend = GetComponent<SpriteRenderer>();
 	}
 	
@@ -57,12 +50,12 @@ public class RobotPart : MonoBehaviour
 
 	public static Color RandomColor(ref int index)
 	{
-		index = Random.Range(0, colors.Length);
-		return (colors[index]);
+		index = GameManager.RndColorIndex();
+		return (GameManager.GetColor(index));
 	}
 	public static Color GetColor(int index)
 	{
-		return (colors[index]);
+		return (GameManager.GetColor(index));
 	}
 	
 	public static RobotPartType RandomType()

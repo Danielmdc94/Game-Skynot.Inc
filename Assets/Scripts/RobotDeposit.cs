@@ -52,9 +52,11 @@ public class RobotDeposit : MonoBehaviour
 	
 	public void Evaluate(RobotPart part)
 	{
-		RobotPart.RobotPartType expectedPart = assembly.Pop();
 		SpawnManager.RecallToPool(part);
-		if (part.partType == expectedPart && part.colorIndex == colorIndices.Pop())
+		RobotPart.RobotPartType expectedPart = assembly.Pop();
+		int expectedColor = colorIndices.Pop();
+		if (part.partType == expectedPart &&
+			(part.colorIndex == expectedColor || expectedColor == 0 || part.colorIndex == 0))
 		{
 			if (assembly.Count == 0)
 			{

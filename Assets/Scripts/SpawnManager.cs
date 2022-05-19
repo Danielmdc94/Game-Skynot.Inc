@@ -62,6 +62,7 @@ public class SpawnManager : MonoBehaviour
 				return ;
 			poolCount++;
 			go = Instantiate<RobotPart>(prefab, pos, Quaternion.identity, transform);
+			go.Awaken();
 		}
 		go.gameObject.SetActive(true);
 		go.transform.position = pos;
