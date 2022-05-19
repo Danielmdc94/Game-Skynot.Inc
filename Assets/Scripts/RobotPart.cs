@@ -4,6 +4,8 @@ using UnityEngine;
 public class RobotPart : MonoBehaviour
 {
 	private static GameManager gm;
+	private static SpawnManager sm;
+	private static float jokerChance = 1f;
 
 	private SpriteRenderer rend;
 
@@ -24,11 +26,13 @@ public class RobotPart : MonoBehaviour
 	public void Awaken()
 	{
 		gm = GameManager.instance;
+		sm = SpawnManager.instance;
 		rend = GetComponent<SpriteRenderer>();
 	}
 	
 	public void Initialize()
 	{
+		jokerChance = sm.jokerChanceOverTime.Evaluate(1f - (Time.time / SpawnManager.maxDifficultyTime));
 		partType = RandomType();
 		rend.sprite = gm.GetImage(partType);
 		rend.color = RandomColor(ref colorIndex);
@@ -50,7 +54,9 @@ public class RobotPart : MonoBehaviour
 
 	public static Color RandomColor(ref int index)
 	{
-		index = GameManager.RndColorIndex();
+		if (Random.value > jokerChance)
+			index = 0;
+		else index = GameManager.RndColorIndex();
 		return (GameManager.GetColor(index));
 	}
 	public static Color GetColor(int index)

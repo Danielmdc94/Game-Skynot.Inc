@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
 	}
 	public static int RndColorIndex()
 	{
-		return (Random.Range(0, robotColors.Length));
+		return (Random.Range(1, robotColors.Length));
 	}
 	public static Color GetColor(int index)
 	{

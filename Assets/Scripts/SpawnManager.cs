@@ -3,15 +3,18 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+	public static SpawnManager instance;
+
     public RobotPart prefab;
     public Vector2[] spawnPos;
 
 	// Controls the difficulty over time, factoring how much time has passed
 	public float spawnTimeScale = 10f;
 	public AnimationCurve spawnIntervalDerivation;
+	public AnimationCurve jokerChanceOverTime;
 
 	private bool gameRunning = false;
-	private const float maxDifficultyTime = 180f;
+	public const float maxDifficultyTime = 180f;
 	private float gameTime = 0f;
 
 	private const float startDelay = 3f;
@@ -23,6 +26,13 @@ public class SpawnManager : MonoBehaviour
 
 	public float poissonRadius;
 	public LayerMask poissonMask;
+
+	void Awake()
+	{
+		if (instance == null)
+			instance = this;
+		else Destroy(gameObject);
+	}
 	
     // Start is called before the first frame update
     void Start()
