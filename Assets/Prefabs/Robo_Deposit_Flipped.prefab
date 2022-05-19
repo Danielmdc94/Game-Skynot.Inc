@@ -9,15 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 698074641, guid: e32e65b7165337c01a3cde8c1a7f056e, type: 3}
       propertyPath: m_Pivot.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 698074641, guid: e32e65b7165337c01a3cde8c1a7f056e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 698074641, guid: e32e65b7165337c01a3cde8c1a7f056e, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 698074641, guid: e32e65b7165337c01a3cde8c1a7f056e, type: 3}
       propertyPath: m_LocalScale.x
@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 698074641, guid: e32e65b7165337c01a3cde8c1a7f056e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.6
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 698074642, guid: e32e65b7165337c01a3cde8c1a7f056e, type: 3}
       propertyPath: m_Sprite
@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7162274515975464172, guid: e32e65b7165337c01a3cde8c1a7f056e, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9122294288611891321, guid: e32e65b7165337c01a3cde8c1a7f056e, type: 3}
       propertyPath: m_Pivot.x

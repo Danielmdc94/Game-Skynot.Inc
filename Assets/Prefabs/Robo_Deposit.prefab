@@ -33,11 +33,11 @@ RectTransform:
   m_Father: {fileID: 3236139426899299549}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -0.6, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.8, y: 0}
   m_SizeDelta: {x: 0.5, y: 0.5}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &698074643
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -283,8 +283,8 @@ MonoBehaviour:
   blastMask:
     serializedVersion: 2
     m_Bits: 64
-  blastRadius: 2.74
-  blastForce: 200
+  blastRadius: 8
+  blastForce: 150
   blastDirection: {x: -4.92, y: 2.31}
 --- !u!61 &5107397520132922536
 BoxCollider2D:
