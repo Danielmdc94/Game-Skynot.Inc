@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 	public Bounds gameArea;
 
 	public TextMeshProUGUI scoreText;
+	public TextMeshProUGUI livesText;
 	public GameObject bgBlack;
 	public Button startButton;
 	public bool isGameActive;
@@ -52,6 +53,12 @@ public class GameManager : MonoBehaviour
 		players = FindObjectsOfType<Player>();
 	}
 
+	void Start()
+	{
+		if (livesText != null)
+			UpdateLives(0);
+	}
+	
 	void Update()
 	{
 		if (isGameActive == false && (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("TitleScreen")))
@@ -65,6 +72,7 @@ public class GameManager : MonoBehaviour
 		
 	public void StartGame()
 	{
+		Player.Reset();
 		SceneManager.LoadScene("FactoryScene");
 	}
 	
@@ -77,12 +85,20 @@ public class GameManager : MonoBehaviour
 	public void UpdateLives(int scoreToAdd)
     {
         lives += scoreToAdd;
-		Debug.Log("Lives Remaining :" + lives.ToString());
+		livesText.text = "";
+		for (int i = 0; i < lives; i++)
+			livesText.text += "<[^_0]> ";
 		if (lives <= 0)
 		{
 			Debug.Log("Game Over!");
+			SceneManager.LoadScene("GameOverScene");
 		}
-    }	
+    }
+
+	public void QuitGame()
+	{
+		Application.Quit();
+	}
 
 	public void hideBGBlack()
 	{

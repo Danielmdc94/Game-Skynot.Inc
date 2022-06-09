@@ -22,11 +22,18 @@ public class Player : MonoBehaviour
 			initP1 = true;
 	}
 
+	public static void Reset()
+	{
+		initP1 = false;
+	}
+
 	private void Update()
 	{
 		jumpBuffer -= Time.deltaTime;
 		actionBuffer -= Time.deltaTime;
 
+		if (Input.GetKeyDown(KeyCode.Escape))
+			Application.Quit();
 		if (isP1)
 			GetInputPlayer1();
 		else GetInputPlayer2();
