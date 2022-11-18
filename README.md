@@ -1,5 +1,4 @@
 # Game-Skynot.Inc
-<h1>Game-Skynot.Inc</h1>
 <p>&emsp; </p>
 
 <h2>How to Play</h2>
@@ -7,6 +6,6 @@
 <p>&emsp;Player 1: ← → to move, ↑ to jump and RSHIFT to pick and throw objects.</p>
 
 <div>
-  ![Alt text](Assets/title_screen.png?raw=true "Title Screen")
+  <img src="https://github.com/Danielmdc94/Game-Skynot.Inc/blob/master/Assets/gameplay.jpg?raw=true)" />
   ![Alt text](Assets/gameplay.png?raw=true "Gameplay")
 </div>
