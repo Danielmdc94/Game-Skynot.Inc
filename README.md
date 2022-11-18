@@ -6,6 +6,7 @@
 <p>&emsp;Player 1: ← → to move, ↑ to jump and RSHIFT to pick and throw objects.</p>
 
 <div>
-  <img src="https://github.com/Danielmdc94/Game-Skynot.Inc/blob/master/Assets/gameplay.png?raw=true)" />
-  ![Alt text](Assets/gameplay.png?raw=true "Gameplay")
+  <img src="https://github.com/Danielmdc94/Game-Skynot.Inc/blob/master/Assets/title_screen.png?raw=true)"/>
+  
+  <img src="https://github.com/Danielmdc94/Game-Skynot.Inc/blob/master/Assets/gameplay.png?raw=true)"/>
 </div>
