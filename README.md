@@ -6,7 +6,7 @@
 <p>&emsp;Player 1: A D to move, SPACE or W to jump and E to pick and throw objects</p>
 <p>&emsp;Player 2: ← → to move, ↑ to jump and RSHIFT to pick and throw objects.</p>
 <p>The goal is to make robot parts exit each of the three conveyor belts in the order shown in each belt's terminal.</p>
-<p>Each parts that exits a conveyor belt and doesn't match the required piece will make you lose one life.</p>
+<p>Each part that exits a conveyor belt and doesn't match the required part for that conveyor belt will make you lose one life.</p>
 <p>Each completed sequence will give you 1 point.</p>
 
 <div>
